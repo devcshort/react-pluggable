@@ -27,7 +27,7 @@ export class EventCallableRegsitry {
 
   dispatchEvent(event: Event) {
     // @ts-ignore
-    if (window['debug']) {
+    if (typeof window !== 'undefined' && window['debug']) {
       console.log('DEBUG::', 'Event:', event.name);
     }
     let callbacks = this.registry.get(event.name);
